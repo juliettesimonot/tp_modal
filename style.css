@@ -1,0 +1,397 @@
+@font-face {
+    font-family: "Metropolis-Ligth";
+    src: url("./asset/font/Metropolis-Light.otf");
+    font-weight: 300;
+}
+
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: white;
+    font-family: 'Metropolis-Ligth', Helvetica, sans-serif;
+    color: rgb(96, 96, 96);
+    height: 100vh;
+    overflow: hidden;
+}
+
+main{
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+
+/* ------------------------------- */
+/*--------- MODAL COOKIE ----------*/
+/* ------------------------------- */
+.cookie_modal_bg, .mail_modal_bg, .login_modal_bg{
+    background-color: white;
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.cookie_modal_bg.dark_bg, .mail_modal_bg.dark_bg, .login_modal_bg.dark_bg{
+    background-color: rgba(0,0,0,0.5);
+    z-index: 9999;
+}
+
+
+.cookie_modal, .mail_modal{
+    background-color: white;
+    width: 60%;
+    opacity: 0;
+    transition: all 0.4s ease-out;
+}
+
+
+.cookie_modal.is_visible, .mail_modal.is_visible{
+    opacity: 1;
+}
+
+
+/* img cookie  */
+
+.cookie_modal .img_bg_container{
+    height: 200px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.cookie_modal .img_bg_container img{
+    width:100%;
+    object-fit: cover;
+}
+
+.cookie_modal .img_float_cookie_container{
+    width: 20%;
+    object-fit: cover;
+    position: relative;
+    top: -50px;
+    right: -50%;
+
+}
+
+.cookie_modal .img_float_cookie_container img{
+    width:100%;
+}
+
+
+/* text container  */
+.text_container{
+    padding: 0 30px;
+    font-size: clamp(0.9em, 1vw, 1.1em);
+}
+
+
+/* cookie header  */
+
+.cookie_modal header, .mail_modal header, .log_container header, .signUp_modal header{
+    display: flex;
+    display: grid;
+    grid-template-columns: 1.8fr 0.2fr;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.cookie_close_button, .mail_close_button, .login_close_button, .signUp_close_button{
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+
+/* texte  */
+.text_container p{
+    margin-bottom: 15px;
+}
+
+.text_container ul{
+    list-style: none;
+    padding: 0;
+}
+
+.text_container li{
+    margin-bottom: 5px;
+}
+
+
+/* buttons  */
+.buttons{
+    margin-top: 15px;
+    border-top: 1.5px solid rgb(164, 164, 164);
+    padding: 10px 0;
+    display: grid;
+    column-gap: 5px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.buttons button{
+    border: none;
+    background-color: white;
+    cursor: pointer;
+}
+
+.buttons button:nth-child(1), .buttons button:nth-child(2) {
+    border-right:1.5px solid rgb(164, 164, 164);;
+}
+
+
+
+/* ------------------------------- */
+/*--------- MODAL MAIL----------*/
+/* ------------------------------- */
+
+
+/* mail img  */
+
+.mail_modal .img_container{
+    max-height: 200px;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 0px 2px 20px rgb(172, 172, 172);
+}
+
+.mail_modal .img_container img{
+    width:100%;
+    object-fit: cover;
+}
+
+/* text container  */
+.mail_modal .text_container p, .mail_modal .text_container ul, .mail_modal .text_container form{
+    text-align: center;
+}
+
+.mail_modal header{
+    margin-top: 15px;
+}
+
+.mail_modal .text_container form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+}
+.mail_modal .text_container form input{
+margin-top: 5px;
+}
+
+.mail_modal .text_container form img{
+   max-height: 150px;
+   opacity: 0.5;
+}
+
+/* bouton  */
+.button_container{
+    border-top: 1.5px solid rgb(164, 164, 164);
+    padding: 10px 0;
+    text-align: center;
+}
+
+.button_container button{
+    background-color: white;
+    border: 1px solid rgb(164, 164, 164);
+    padding: 10px 25px;
+}
+
+
+
+/* ------------------------------- */
+/*--------- MODAL LOGIN----------*/
+/* ------------------------------- */
+
+
+/* login container  */
+.log_container{
+    width: 60%;
+    opacity: 0;
+    transition: all 0.4s ease-out;
+}
+
+
+.log_container.is_visible{
+    opacity: 1;
+}
+
+
+.login_modal, .signUp_modal{
+    background-color: white;
+    margin-top: 20px;
+}
+
+/* login section */
+
+.login_modal .img_container{
+    max-height: 200px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.login_modal .img_container img{
+    width:100%;
+    object-fit: cover;
+}
+
+.login_modal form, .signUp_modal form{
+    display: flex;
+    flex-direction: column;  
+}
+
+.login_modal form div, .signUp_modal form div{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 10px;  
+}
+
+
+.login_modal .button_container, .signUp_modal .button_container{
+    border: none;
+}
+
+/* signup section */
+
+.signUp_modal header, .login_modal header{
+    margin-top: 20px;
+}
+
+.signUp_modal .button_container button{
+    margin-top: 10px;
+}
+
+
+/* ------------------------------- */
+/*--------- FOOTER ----------*/
+/* ------------------------------- */
+
+footer{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+footer ul{
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+footer ul .cookie_button {
+    max-width: 60px;
+    cursor: pointer;
+}
+
+footer ul .mail_button, footer ul .login_button{
+    max-width: 50px;
+    cursor: pointer;
+}
+
+
+footer ul .cookie_button img, footer ul .mail_button img, footer ul .login_button img{ 
+    width: 100%;
+}
+
+
+
+/* ------------------------------- */
+/*--------- RESPONSIVE ----------*/
+/* ------------------------------- */
+
+@media (min-width:800px) {
+
+    /* cookie modal  */
+    .cookie_modal{
+       display: grid;
+       grid-template-columns: 0.6fr 1.4fr;
+    }
+
+    .cookie_modal .img_bg_container{
+        height: 100%;
+    }
+    
+    .cookie_modal .img_bg_container img{
+        width:100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .cookie_modal .img_float_cookie_container{
+        width: 30%;
+        object-fit: cover;
+        position: relative;
+        top: -50%;
+        right: -80%;
+    
+    }
+    
+    .cookie_modal .img_float_cookie_container img{
+        width:100%;
+    }
+
+    .cookie_modal .text_container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .cookie_modal header{
+        margin-top: 15px;
+    }
+
+    .cookie_modal header img{
+       max-width: 30px;
+    }
+
+
+    /* mail modal  */
+    .mail_modal{
+        width: 35%;
+    }
+
+    /* login modal  */
+    .log_container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 20px;
+    }
+
+
+    /* footer  */
+    footer{
+        position: absolute;
+        bottom: 0 !important;
+        right: 0;
+    }
+
+
+    footer ul .cookie_button {
+        max-width: 130px;
+    }
+    
+    footer ul .mail_button, footer ul .login_button{
+        max-width: 90px;
+    }
+
+    footer ul .login_button{
+        max-width: 80px;
+    }
+
+    
+}
